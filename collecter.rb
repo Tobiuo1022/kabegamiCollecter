@@ -31,7 +31,7 @@ def take_img_urls(post_url)
 	img_tags = post_doc.xpath("//a[@class='button add-dl']")
 
     img_urls = img_tags.each.map do |img_tag|
-        img_path = img_tag.attribute('href').value
+        img_tag.attribute('href').value
     end
 end
 
@@ -52,6 +52,7 @@ def take_post_urls(page_doc)
 
     # ページ内の全ての投稿URLを取得.
     img_size= /^(?=.*1920)(?=.*1080).*$/
+		
     post_urls = []
     a_tags.each do |a_tag|
         if a_tag.content.match?(img_size)
