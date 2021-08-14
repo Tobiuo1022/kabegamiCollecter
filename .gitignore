@@ -1,2 +1,3 @@
+*.DS_Store
 *.swp
 .byebug_history
